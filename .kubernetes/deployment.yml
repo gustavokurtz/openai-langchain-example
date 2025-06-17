@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-rag-estudos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-rag-estudos
+  template:
+    metadata:
+      labels:
+        app: app-rag-estudos
+    spec:
+      containers:
+        - name: app-rag-estudos
+          image: kurtzz171/api-python:latest
+          ports:
+          # Porta que o container vai expor e a mesma da aplicação
+          # A porta que o container vai expor deve ser a mesma que o targetPort do
+            - containerPort: 8000
+    

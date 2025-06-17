@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-rag-estudos-ingress
+spec:
+  rules:
+  - host: app2.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            # O nome do service que queremos expor
+            name: app-rag-estudos-service
+            port:
+              number: 80  
